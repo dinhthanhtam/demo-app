@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - 2.4.1
+before_install:
+  - gem update --system
+  - gem --version
+  - gem install bundle
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+services:
+  - redis-server 
